@@ -1,0 +1,30 @@
+{
+  "baseUrl": "https://bulbapedia.bulbagarden.net/wiki",
+  "env": {
+    "TAGS": "not @wip"
+  },
+  "integrationFolder": "cypress/integration",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "quiet": true,
+      "overwrite": false,
+      "html": false,
+      "json": true
+    },
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "junit-custom-[hash].xml",
+      "reportDir": "cypress/reports/junit",
+      "jenkinsMode": "true"
+    }
+  },
+  "screenshotsFolder": "cypress/screenshots",
+  "testFiles": "**/*.feature",
+  "ignoreTestFiles": "*.js",
+  "chromeWebSecurity": false,
+  "video": true,
+  "defaultCommandTimeout": 50000,
+  "pageLoadTimeout": 200000,
+  "numTestsKeptInMemory": 1
+}
